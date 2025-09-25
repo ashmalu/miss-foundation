@@ -19,12 +19,16 @@ export class UserService {
   }
 
   public forUser() {
-    return this.httpClient.get("/api/image/1", {responseType: "blob"});
+    return this.httpClient.get("/api/getAllProjects", {responseType: "json"});
   }
 
   public forAdmin() {
     return this.httpClient.get("/api/forAdmin", { responseType: 'text'});
-  } 
+  }
+
+  public getImage(id: number) {
+    return this.httpClient.get("/api/image/"+id, {responseType: 'blob'});
+  }
   
 }
 ``

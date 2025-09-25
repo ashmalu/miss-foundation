@@ -9,7 +9,7 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 })
 export class UserComponent implements OnInit {
 
-  projectId: string = '';
+  projectId: number = 0;
   projectName: string = '';
   teamSize: number = 0;
   dateOfStart: string = '';
@@ -23,9 +23,16 @@ export class UserComponent implements OnInit {
 
   forUser() {
     this.userService.forUser().subscribe(
-      (blob: any) => {
-        const objectURL = URL.createObjectURL(blob);
-        this.imageUrl = this.sanitizer.bypassSecurityTrustUrl(objectURL);
+      (response: any) => {
+        this.projectId = response[0].projectId;
+        this.userService.getImage(this.projectId).subscribe(
+          (blob:any)=>{
+            const objectURL = URL.createObjectURL(blob);
+            this.imageUrl = this.sanitizer.bypassSecurityTrustUrl(objectURL);
+          },(error)=>{
+            console.log(error);
+          }
+        )
       }, (error)=>{
         console.log(error);
       }
