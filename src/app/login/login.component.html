@@ -1,10 +1,31 @@
 <div class="container mt-5">
     <div class="card" style="padding: 20px;">
         <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
-            <input type="text" ngModel name="userName" id="userName" placeholder="Enter your username" class="form-control mb-3">
+            
+            <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="Username" ngModel name="userName" id="userName">
+            <mat-hint>Username</mat-hint>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput placeholder="Password" ngModel name="password" id="password">
+            <mat-hint>Password</mat-hint>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline" class="w-100">
+            <mat-label>EmailId</mat-label>
+            <input matInput placeholder="EmailId"  ngModel name="emailId" id="emailId">
+            <mat-hint>EmailId</mat-hint>
+            </mat-form-field>
+  
+            <button class="w-100" type="submit" mat-raised-button color="primary">Login</button>
+
+            <!-- <input type="text" ngModel name="userName" id="userName" placeholder="Enter your username" class="form-control mb-3">
             <input type="password" ngModel name="password" id="password" placeholder="Enter your password" class="form-control mb-3">
             <input type="text" ngModel name="emailId" id="emailId" placeholder="Enter your emailId" class="form-control mb-3">
-            <input type="submit" value="Login" class="btn btn-outline-primary form-control rounded-0">
+            <input type="submit" value="Login" class="btn btn-outline-primary form-control rounded-0"> -->
         </form>
         <div style="color: red; padding: 20px;" class="card mt-5 text-center" *ngIf="err">{{strError}}</div>
     </div>

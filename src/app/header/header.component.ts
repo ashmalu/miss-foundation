@@ -31,7 +31,7 @@ export class HeaderComponent implements OnInit {
     this.admin = false;
     this.user = false;
     this.userAuthService.clear();
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/');
   }
 
   public role() {
@@ -43,6 +43,14 @@ export class HeaderComponent implements OnInit {
       this.user = true;
       this.admin = false;
     }
+  }
+
+  public isAdmin() {
+    return this.userAuthService.isAdmin();
+  }
+
+  public isUser() {
+    return this.userAuthService.isUser();
   }
 
 }
