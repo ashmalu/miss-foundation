@@ -19,15 +19,15 @@ export class UserService {
   }
 
   public forUser() {
-    return this.httpClient.get(this.PATH_OF_API+"/api/getAllProjects", {responseType: "json"});
+    return this.httpClient.get("/api/getAllProjects", {responseType: "json"});
   }
 
   public forAdmin() {
-    return this.httpClient.get(this.PATH_OF_API+"/api/forAdmin", { responseType: 'text'});
+    return this.httpClient.get("/api/forAdmin", { responseType: 'text'});
   }
 
   public getImage(id: number) {
-    return this.httpClient.get(this.PATH_OF_API+"/api/image/"+id, {responseType: 'blob'});
+    return this.httpClient.get("/api/image/"+id, {responseType: 'blob'});
   }
   
 }
