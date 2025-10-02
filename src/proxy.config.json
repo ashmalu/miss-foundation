@@ -1,6 +1,6 @@
 {
     "/api":{
-        "target":"http://localhost:8090",
+        "target":"https://springboot-backend-taskmanager-c9cuefhhbpg0g0fp.canadacentral-01.azurewebsites.net",
         "secure": true,
         "changeOrigin": true
     }
