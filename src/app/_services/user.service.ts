@@ -8,7 +8,7 @@ import { UserAuthService } from './user-auth.service';
 })
 export class UserService {
 
-  PATH_OF_API = 'http://localhost:8090';
+  PATH_OF_API = 'https://springboot-backend-taskmanager-c9cuefhhbpg0g0fp.canadacentral-01.azurewebsites.net';
   
   requestHeader = new HttpHeaders({ "No-Auth": "True"})
 
